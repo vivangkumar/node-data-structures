@@ -1,0 +1,15 @@
+{
+  "name": "node-data-structures",
+  "version": "1.0.0",
+  "description": "Node.js data structures.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha -w"
+  },
+  "author": "Vivan <vivangkumar>",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
+  }
+}
