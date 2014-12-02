@@ -3,7 +3,7 @@
 
 Simple implementation of some common data structures in Node.
 
-Based on [adrianko's] (https://github.com/adrianko) implementation of PHP Data Structures.
+Based on [adrianko's] (https://github.com/adrianko) implementation of [PHP Data Structures] (https://github.com/adrianko/php-data-structures).
 
 ### Running Tests
 
