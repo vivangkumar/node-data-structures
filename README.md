@@ -6,8 +6,8 @@ Based on [adrianko's] (https://github.com/adrianko) implementation of PHP Data S
 
 ### Running Tests
 
-'''javascript
+```javascript
     npm test
-'''
+```
 
 Uses Mocha and Chai frameworks.
