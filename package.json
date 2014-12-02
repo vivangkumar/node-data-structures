@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Node.js data structures.",
   "main": "index.js",
+  "repository": "https://github.com/vivangkumar/node-data-structures",
   "scripts": {
     "test": "node_modules/.bin/mocha -w"
   },
