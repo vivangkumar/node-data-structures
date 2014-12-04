@@ -25,18 +25,18 @@
              expect(collectionWithElements).to.be.an.instanceof(Collection);
          });
          it('should have 3 elements', function() {
-             var elements = collectionWithElements.get();
+             var elements = collectionWithElements.getAll();
              expect(elements).to.have.length(3);
          })
      });
 
-     describe('Get collection', function() {
+     describe('GetAll collection', function() {
          var collectionWithElements = new Collection("a", "b", "c");
-         it('should get all elements of a collection', function() {
-             expect(collectionWithElements.get()).to.eql(["a", "b", "c"]);
+         it('should getAll all elements of a collection', function() {
+             expect(collectionWithElements.getAll()).to.eql(["a", "b", "c"]);
          });
          it('should have 3 elements', function() {
-             expect(collectionWithElements.get()).to.have.length(3);
+             expect(collectionWithElements.getAll()).to.have.length(3);
          });
      });
 
@@ -53,10 +53,10 @@
              assert.isTrue(emptyCollection.add("x"));
          });
          it('should have length 1', function() {
-            expect(emptyCollection.get()).to.have.length(1);
+            expect(emptyCollection.getAll()).to.have.length(1);
          });
          it('should have one element "x"', function() {
-             expect(emptyCollection.get()).to.eql(["x"]);
+             expect(emptyCollection.getAll()).to.eql(["x"]);
          });
          it('should return false if no arguments are present', function() {
              assert.isFalse(emptyCollection.add());
@@ -69,10 +69,10 @@
              assert.isTrue(emptyCollection.addAll("x", "y", "z"));
          });
          it('should have length of 3', function() {
-             expect(emptyCollection.get()).to.have.length(3);
+             expect(emptyCollection.getAll()).to.have.length(3);
          });
          it('should have 3 elements "x", "y", "z"', function() {
-             expect(emptyCollection.get()).to.eql(["x", "y", "z"]);
+             expect(emptyCollection.getAll()).to.eql(["x", "y", "z"]);
          });
      });
 
@@ -128,14 +128,14 @@
              assert.isTrue(removed);
          });
          it('should have length 2', function() {
-             expect(collectionWithElements.get()).to.have.length(2);
+             expect(collectionWithElements.getAll()).to.have.length(2);
          });
          it('should return false if element cannot be removed', function() {
              var removed = collectionWithElements.remove("a");
              assert.isFalse(removed);
          });
          it('should be equal to ["y", "z"]', function() {
-             expect(collectionWithElements.get()).to.eql(["y", "z"]);
+             expect(collectionWithElements.getAll()).to.eql(["y", "z"]);
          })
      });
 
@@ -150,10 +150,10 @@
              assert.isFalse(removed);
          });
          it('should be equal to ["z"]', function() {
-             expect(collectionWithElements.get()).to.eql(["z"]);
+             expect(collectionWithElements.getAll()).to.eql(["z"]);
          });
          it('should have length 1', function() {
-             expect(collectionWithElements.get()).to.have.length(1);
+             expect(collectionWithElements.getAll()).to.have.length(1);
          });
      });
 
@@ -164,10 +164,10 @@
              assert.isTrue(keep);
          });
          it('should have length 1', function() {
-             expect(collectionWithElements.get()).to.have.length(1);
+             expect(collectionWithElements.getAll()).to.have.length(1);
          });
          it('should be equal to ["x"]', function() {
-             expect(collectionWithElements.get()).to.be.eql(["x"]);
+             expect(collectionWithElements.getAll()).to.be.eql(["x"]);
          })
      });
 
