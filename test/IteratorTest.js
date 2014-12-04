@@ -60,5 +60,5 @@
          it('should throw an error when next is not called', function() {
              expect(iteratorTwo.remove.bind(iteratorTwo)).to.throw(Error);
          });
-     })
+     });
  });

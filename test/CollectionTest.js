@@ -30,7 +30,7 @@
          })
      });
 
-     describe('GetAll collection', function() {
+     describe('GetAll', function() {
          var collectionWithElements = new Collection("a", "b", "c");
          it('should getAll all elements of a collection', function() {
              expect(collectionWithElements.getAll()).to.eql(["a", "b", "c"]);
@@ -40,7 +40,7 @@
          });
      });
 
-     describe('Collection size', function() {
+     describe('Size', function() {
          var collectionWithElements = new Collection("a", "b", "c");
          it('should return a size of 3', function() {
              collectionWithElements.size().should.equal(3);
