@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/vivangkumar/node-data-structures",
   "scripts": {
-    "test": "node_modules/.bin/mocha -w"
+    "test": "node_modules/.bin/mocha"
   },
   "author": "Vivan <vivangkumar>",
   "license": "MIT",
