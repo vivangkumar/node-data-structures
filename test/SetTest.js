@@ -9,15 +9,18 @@
  , assert = chai.assert
  , should = chai.should();
 
- var Collection = require('../lib/Collection.js');
- var Iterator = require('../lib/Iterator.js');
  var Set = require('../lib/Set.js');
 
  describe('Set', function() {
      describe('Add', function() {
          var set = new Set("z", "x");
+         var setOne = new Set("a", "b");
+         var setTwo = new Set("x", "y", setOne);
          it('should add a new element to the set', function() {
              expect(set.add("c")).to.be.true();
+         });
+         it('should add a new set to the set', function() {
+             expect(setTwo.getAll()).to.eql(["x", "y", ["a" ,"b"]]);
          });
          it('should have length 3', function() {
              expect(set.size()).to.be.equal(3);
@@ -28,13 +31,19 @@
          it('should still contain three elements', function() {
              expect(set.getAll()).to.eql(["z",  "x", "c"]);
          });
+         it('should add another set to a set', function() {
+             var firstSet = new Set("a", "b");
+             var secondSet = new Set("z");
+             expect(firstSet.add(secondSet)).to.be.true();
+             expect(firstSet.getAll()).to.be.eql(["a" ,"b", ["z"]]);
+         })
      });
 
      describe('Add all', function() {
          var set = new Set();
          var anotherSet = new Set("a", "b");
 
-         it('should add all elements to the collection', function() {
+         it('should add all elements to the Set', function() {
              assert.isTrue(set.addAll("x", "y", ["a", "b"]));
          });
          it('should add all elements in another set', function() {
@@ -57,7 +66,7 @@
 
      describe('GetAll', function() {
          var set = new Set("a", "b", ["z", "x"]);
-         it('should getAll all elements of a collection', function() {
+         it('should getAll all elements of a set', function() {
              expect(set.getAll()).to.eql(["a", "b", ["z", "x"]]);
          });
          it('should have 3 elements', function() {
