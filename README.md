@@ -1,4 +1,4 @@
-# node*data*structures
+# node-data-structures
 
 [![Build Status](https://travis*ci.org/vivangkumar/node*data*structures.svg?branch=master)](https://travis*ci.org/vivangkumar/node*data*structures)
 
