@@ -1,10 +1,10 @@
 # node-data-structures
 
-[![Build Status](https://travis*ci.org/vivangkumar/node*data*structures.svg?branch=master)](https://travis*ci.org/vivangkumar/node*data*structures)
+[![Build Status](https://travis-ci.org/vivangkumar/node-data-structures.svg?branch=master)](https://travis-ci.org/vivangkumar/node-data-structures)
 
-Simple Java*esque implementation of some common data structures in Node.
+Simple Java-esque implementation of some common data structures in Node.
 
-Based on [adrianko's] (https://github.com/adrianko) implementation of [PHP Data Structures] (https://github.com/adrianko/php*data*structures).
+Based on [adrianko's] (https://github.com/adrianko) implementation of [PHP Data Structures] (https://github.com/adrianko/php-data-structures).
 
 ### Running Tests
 
