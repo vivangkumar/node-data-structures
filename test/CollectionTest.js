@@ -80,7 +80,7 @@
          var collectionWithElements = new Collection("x", "y", "z");
          it('should not have any elements', function() {
              collectionWithElements.clear();
-             expect(collectionWithElements.elements).to.be.empty;
+             expect(collectionWithElements.getAll()).to.be.empty;
          })
      });
 
@@ -185,7 +185,7 @@
              var equals = collectionOne.equals(collectionThree);
              assert.isFalse(equals);
          });
-         it('should return false if a collection is not an instance of Collection', function() {
+         it('should return false if not an instance of Collection', function() {
              var equals = collectionOne.equals(falseCollection);
              assert.isFalse(equals);
          });
