@@ -219,5 +219,4 @@
              assert.isFalse(equals);
          });
      });
-
  });
