@@ -51,16 +51,16 @@
              assert.isTrue(set.addAll(anotherSet));
          });
          it('should have length of 5', function() {
-             expect(set.getAll()).to.have.length(5);
+             expect(set.getAll()).to.have.length(4);
          });
-         it('should have 3 elements "x", "y", ["a", "b"]', function() {
-             expect(set.getAll()).to.eql(["x", "y", ["a", "b"], "a", "b"]);
+         it('should have 5 elements "x", "y", ["a", "b"], ["a", "b"]', function() {
+             expect(set.getAll()).to.eql(["x", "y", ["a", "b"], ["a", "b"]]);
          });
          it('should return false if a duplicate is added', function() {
              expect(set.addAll("x", "y")).to.be.false();
          });
-         it('should still have length of 5', function() {
-             expect(set.getAll()).to.have.length(5);
+         it('should still have length of 4', function() {
+             expect(set.getAll()).to.have.length(4);
          });
      });
 
@@ -110,6 +110,8 @@
          });
          it('should return true if argument is a sub set', function() {
              assert.isTrue(anotherSet instanceof Set);
+             set.add(anotherSet);
+
              var exists = set.containsAll(anotherSet);
              assert.isTrue(exists);
          });
@@ -159,10 +161,11 @@
          });
          it('should return true if subset has been removed', function() {
              var setTwo = new Set("x", "y", "z");
+             setTwo.add(anotherSet);
              var removed = setTwo.removeAll(anotherSet);
              assert.isTrue(removed);
-             expect(setTwo.getAll()).to.have.length(1);
-             expect(setTwo.getAll()).to.eql(["z"]);
+             expect(setTwo.getAll()).to.have.length(3);
+             expect(setTwo.getAll()).to.eql(["x" ,"y", "z"]);
          });
          it('should return false if all elements cant be removed', function() {
              var removed = set.removeAll("a", "b");
@@ -185,11 +188,12 @@
          it('should keep a subset', function() {
              var setTwo = new Set("a", "b", "c");
              var anotherSet = new Set("b", "c");
+             setTwo.add(anotherSet);
              var keep = setTwo.keep(anotherSet);
 
              assert.isTrue(keep);
-             expect(setTwo.getAll()).to.have.length(2);
-             expect(setTwo.getAll()).to.be.eql(["b", "c"]);
+             expect(setTwo.getAll()).to.have.length(1);
+             expect(setTwo.getAll()).to.be.eql([["b", "c"]]);
          });
          it('should have length 1', function() {
              expect(set.getAll()).to.have.length(1);
