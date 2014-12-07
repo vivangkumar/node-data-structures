@@ -51,16 +51,16 @@
              assert.isTrue(set.addAll(anotherSet));
          });
          it('should have length of 5', function() {
-             expect(set.getAll()).to.have.length(5);
+             expect(set.getAll()).to.have.length(4);
          });
-         it('should have 3 elements "x", "y", ["a", "b"]', function() {
-             expect(set.getAll()).to.eql(["x", "y", ["a", "b"], "a", "b"]);
+         it('should have 5 elements "x", "y", ["a", "b"], ["a", "b"]', function() {
+             expect(set.getAll()).to.eql(["x", "y", ["a", "b"], ["a", "b"]]);
          });
          it('should return false if a duplicate is added', function() {
              expect(set.addAll("x", "y")).to.be.false();
          });
-         it('should still have length of 5', function() {
-             expect(set.getAll()).to.have.length(5);
+         it('should still have length of 4', function() {
+             expect(set.getAll()).to.have.length(4);
          });
      });
 
