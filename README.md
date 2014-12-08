@@ -6,14 +6,6 @@ Simple Java-esque implementation of some common data structures in Node.
 
 Based on [adrianko's] (https://github.com/adrianko) implementation of [PHP Data Structures] (https://github.com/adrianko/php-data-structures).
 
-### Running Tests
-
-```javascript
-    npm test
-```
-
-Uses Mocha and Chai frameworks.
-
 ### Data Structures
 
 * Sets
@@ -29,7 +21,7 @@ Uses Mocha and Chai frameworks.
 
 * Sets
 * Collections
-* Iterators
+* Iterator
 
 ## Documentation
 
@@ -59,7 +51,7 @@ Provides some helper methods to iterate over collections.
 Available methods:
 
 * `next()`: Returns the next element in the collection. Throws `Error('No such element')` if there are no more elements to be returned.
-* `hasNext()`: Returns a `boolean` value if `next()` returns an element. Throws the same exception as `next()`.
+* `hasNext()`: Returns a `boolean` ; true if the next element exists, else returns false. It is advisable to use `hasNext()` before calling `next()`.
 * `remove()`: Removes the last element that was iterated in the collection. Throws `Error('Next() was not called')` when `remove()` is called without `next()` being called.
 
 ### Set API
@@ -75,7 +67,7 @@ No duplicate elements can be added to a Set. Methods are inherited from `Collect
     var set = new Set("a", "b", "c");
     set.add("d"); // Adds "d" to the set
     set.addAll("x", "y"); // Adds "x" and "y" to the set
-    set.size(); // Will return 5
+    set.size(); // Will return 6
 ```
 
 * Creating an empty Set.
@@ -93,3 +85,25 @@ No duplicate elements can be added to a Set. Methods are inherited from `Collect
     var setThree = new Set(["r", "s"]);
     setTwo.add(setThree);
 ```
+
+* Create a new Iterator
+
+```javascript
+    var set = new Set();
+    var setOne = new Set("a", "b", ["x", "y"]);
+    set.add(setOne);
+
+    var iterator = new Iterator(set);
+    while(iterator.hasNext()) {
+        console.log(iterator.next());
+    }
+```
+
+## Running Tests
+
+```javascript
+npm test
+```
+Frameworks:
+* Mocha
+* Chai
