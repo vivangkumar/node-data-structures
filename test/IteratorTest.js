@@ -23,8 +23,8 @@
          it('should return "b" in the second iteration', function() {
              expect(iterator.next()).to.be.equal("b");
          });
-         it('should throw an error for next iteration', function() {
-             expect(iterator.next.bind(iterator)).to.throw(Error);
+         it('should return false for next iteration', function() {
+             expect(iterator.hasNext()).to.be.false();
          });
      });
 
@@ -37,8 +37,8 @@
          it('should return true for second iteration', function() {
              expect(iterator.hasNext()).to.be.true();
          });
-         it('should throw error for next iteration', function() {
-             expect(iterator.hasNext.bind(iterator)).to.throw(Error);
+         it('should return false for next iteration', function() {
+             expect(iterator.hasNext()).to.be.false();
          });
      });
 
@@ -87,8 +87,8 @@
          it('should return true for second iteration', function() {
              expect(iterator.hasNext()).to.be.true();
          });
-         it('should throw error for next iteration', function() {
-             expect(iterator.hasNext.bind(iterator)).to.throw(Error);
+         it('should return false for next iteration', function() {
+             expect(iterator.hasNext()).to.be.false();
          });
      });
      describe('Remove', function() {
