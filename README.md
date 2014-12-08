@@ -20,6 +20,7 @@ Based on [adrianko's] (https://github.com/adrianko) implementation of [PHP Data 
 ### Implemented features
 
 * Sets
+* Sorted Sets
 * Collections
 * Iterator
 
@@ -56,8 +57,19 @@ Available methods:
 
 ### Set API
 
-No duplicate elements can be added to a Set. Methods are inherited from `Collection`.
+No duplicate elements can be added to a `Set`. Methods are inherited from `Collection`.
 `add(item)` and `addAll()` differ only on duplicate elements being added.
+
+### Sorted Set API
+
+`SortedSet` inherits from `Set` and contains additional methods. Elements are sorted when added to a `SortedSet`.
+Available methods:
+
+* `first()` : Returns the first element of the collection.
+* `last()`: Returns the last element of the collection.
+* `headSet(end)`: Returns a `SortedSet` containing elements from the parent set strictly less than `end`.
+* `tailSet(start)`: Returns a `SortedSet` containing elements inclusive of `start`.
+* `subSet(start, end)`: Returns a `SortedSet` containing elements inclusive of `start` but not inclusive of `end` inheriting from the parent collection.
 
 ## Examples
 
@@ -99,11 +111,23 @@ No duplicate elements can be added to a Set. Methods are inherited from `Collect
     }
 ```
 
+* Create a new SortedSet
+
+```javascript
+    var sortedSet = new SortedSet("z", "x", "c", "v");
+    sortedSet.getAll(); // Will return ["c", "v", "x", "z"]
+    var set = new Set(["r", "s", "t"], "k");
+    sortedSet.add(set);
+
+    sortedSet.first(); // Will return "c"
+    sortedSet.tailSet("v"); // Will return ["v", "x", "z"]
+```
+
 ## Running Tests
 
 ```javascript
 npm test
 ```
-Frameworks:
-* Mocha
-* Chai
+Test Frameworks:
+* Mocha - Test suite runner.
+* Chai - Assert, Expect and Should (BDD).
