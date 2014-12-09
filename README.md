@@ -73,12 +73,15 @@ Available methods:
 * `subSet(start, end)`: Returns a `SortedSet` containing elements inclusive of `start` but not inclusive of `end` inheriting from the parent collection.
 
 ### Queue API
-`Queue` inherits from `Collection`. All methods in `Collection` are available to `Queue`. For now `Queue` is implemented in a FIFO manner. Other methods available are:
+`Queue` inherits from `Collection`. All methods in `Collection` are available to `Queue`. Other methods available are:
 
 * `element()`: Returns the first element in the Queue. Throws an `Error('No such element')` if the Queue is empty.
 * `remove()`: Retrieves and removes the element at the head of the Queue. Throws an `Error('Queue is empty')` if Queue is empty.
 * `poll()`: Removes and retrieves the element at the head of the Queue. Differs from `remove()` only in that it returns `null` if the Queue is empty.
 * `peek()`: Retrieves the element at the head of the Queue. Differs from `element()` only in that it returns `null` if Queue is empty.
+
+## FQueue and LQueue API
+`FQueue` and `LQueue` inherit from `Queue` and represent a FIFO and LIFO Queue respectively. All methods available in the Queue API are available.
 
 ## Examples
 
@@ -132,13 +135,22 @@ Available methods:
     sortedSet.tailSet("v"); // Will return ["v", "x", "z"]
 ```
 
-* Create a new Queue
+* Create a new FQueue
 
 ```javascript
-    var q = new Queue("z", "x", "c", "v");
-    console.log(q.peek()); // Will print "z"
-    q.poll(); // Will remove "z" and return it.
-    console.log(q.getAll()); // Will contain only 3 elements
+    var q = new FQueue("z", "x", "c");
+    q.peek(); // Will return "z"
+    q.poll(); // Will remove and return "z"
+    q.getAll(); // Contains ["x", "c"]
+```
+
+* Create a new LQueue
+
+```javascript
+    var q = new LQueue("z", "x", "c");
+    q.peek(); // Will return "c"
+    q.poll(); // Wil remove and return "c"
+    q.getAll(); // Contains ["x", "z"]
 ```
 
 ## Running Tests
