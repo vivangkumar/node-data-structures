@@ -45,7 +45,6 @@ Available methods:
 * `removeAll()`: Removes all elements in `arguments`. Returns a `boolean` value.
 * `equals(Collection)`: Compares one `Collection` to another. Returns `boolean` if each element is the same in each collection. Nested collections are further compared.
 
-*Behaviour for some classes may vary from the rest*
 
 ### Iterator API
 
@@ -79,9 +78,6 @@ Available methods:
 * `remove()`: Retrieves and removes the element at the head of the Queue. Throws an `Error('Queue is empty')` if Queue is empty.
 * `poll()`: Removes and retrieves the element at the head of the Queue. Differs from `remove()` only in that it returns `null` if the Queue is empty.
 * `peek()`: Retrieves the element at the head of the Queue. Differs from `element()` only in that it returns `null` if Queue is empty.
-
-#### FQueue and LQueue API
-`FQueue` and `LQueue` inherit from `Queue` and represent a FIFO and LIFO Queue respectively. All methods available in the Queue API are available.
 
 ## Examples
 
@@ -135,22 +131,13 @@ Available methods:
     sortedSet.tailSet("v"); // Will return ["v", "x", "z"]
 ```
 
-* Create a new FQueue
+* Create a new Queue
 
 ```javascript
-    var q = new FQueue("z", "x", "c");
+    var q = new Queue("z", "x", "c");
     q.peek(); // Will return "z"
     q.poll(); // Will remove and return "z"
     q.getAll(); // Contains ["x", "c"]
-```
-
-* Create a new LQueue
-
-```javascript
-    var q = new LQueue("z", "x", "c");
-    q.peek(); // Will return "c"
-    q.poll(); // Will remove and return "c"
-    q.getAll(); // Contains ["x", "z"]
 ```
 
 ## Running Tests
