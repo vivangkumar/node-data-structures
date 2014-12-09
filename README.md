@@ -21,6 +21,7 @@ Based on [adrianko's] (https://github.com/adrianko) implementation of [PHP Data 
 
 * Sets
 * Sorted Sets
+* Queues
 * Collections
 * Iterator
 
@@ -70,6 +71,14 @@ Available methods:
 * `headSet(end)`: Returns a `SortedSet` containing elements from the parent set strictly less than `end`.
 * `tailSet(start)`: Returns a `SortedSet` containing elements inclusive of `start`.
 * `subSet(start, end)`: Returns a `SortedSet` containing elements inclusive of `start` but not inclusive of `end` inheriting from the parent collection.
+
+### Queue API
+`Queue` inherits from `Collection`. All methods in `Collection` are available to `Queue`. For now `Queue` is implemented in a FIFO manner. Other methods available are:
+
+* `element()`: Returns the first element in the Queue. Throws an `Error('No such element')` if the Queue is empty.
+* `remove()`: Retrieves and removes the element at the head of the Queue. Throws an `Error('Queue is empty')` if Queue is empty.
+* `poll()`: Removes and retrieves the element at the head of the Queue. Differs from `remove()` only in that it returns `null` if the Queue is empty.
+* `peek()`: Retrieves the element at the head of the Queue. Differs from `element()` only in that it returns `null` if Queue is empty.
 
 ## Examples
 
@@ -123,6 +132,15 @@ Available methods:
     sortedSet.tailSet("v"); // Will return ["v", "x", "z"]
 ```
 
+* Create a new Queue
+
+```javascript
+    var q = new Queue("z", "x", "c", "v");
+    console.log(q.peek()); // Will print "z"
+    q.poll(); // Will remove "z" and return it.
+    console.log(q.getAll()); // Will contain only 3 elements
+```
+
 ## Running Tests
 
 ```javascript
@@ -131,3 +149,8 @@ npm test
 Test Frameworks:
 * Mocha - Test suite runner.
 * Chai - Assert, Expect and Should (BDD).
+
+## Updates / Todo
+
+* Possibly make data structures synchronised.
+* Make `SortedSets` backed by parent sets.

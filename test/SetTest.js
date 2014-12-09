@@ -2,7 +2,7 @@
  * Set tests.
  *
  * @author Vivan
- **/
+ */
 
  var chai = require('chai')
  , expect = chai.expect
