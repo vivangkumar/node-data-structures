@@ -80,7 +80,7 @@ Available methods:
 * `poll()`: Removes and retrieves the element at the head of the Queue. Differs from `remove()` only in that it returns `null` if the Queue is empty.
 * `peek()`: Retrieves the element at the head of the Queue. Differs from `element()` only in that it returns `null` if Queue is empty.
 
-## FQueue and LQueue API
+#### FQueue and LQueue API
 `FQueue` and `LQueue` inherit from `Queue` and represent a FIFO and LIFO Queue respectively. All methods available in the Queue API are available.
 
 ## Examples
@@ -149,7 +149,7 @@ Available methods:
 ```javascript
     var q = new LQueue("z", "x", "c");
     q.peek(); // Will return "c"
-    q.poll(); // Wil remove and return "c"
+    q.poll(); // Will remove and return "c"
     q.getAll(); // Contains ["x", "z"]
 ```
 
