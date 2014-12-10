@@ -6,4 +6,14 @@
  * @copyright Vivan, 2014.
  */
 
- 
+ var Set = require('./lib/Set.js');
+ var SortedSet = require('./lib/SortedSet.js');
+ var Queue = require('./lib/Queue.js');
+ var Iterator = require('./lib/Iterator.js');
+
+ module.exports = {
+     Set: Set,
+     SortedSet: SortedSet,
+     Queue: Queue,
+     Iterator: Iterator
+ }

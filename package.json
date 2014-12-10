@@ -1,14 +1,26 @@
 {
   "name": "node-data-structures",
   "version": "1.0.0",
-  "description": "Node.js data structures.",
+  "description": "Simple implementation of Java like data structures in Javascript.",
   "main": "index.js",
   "repository": "https://github.com/vivangkumar/node-data-structures",
+  "keywords": [
+     "data structures",
+     "iterator",
+     "set",
+     "queue"
+  ],
   "scripts": {
     "test": "node_modules/.bin/mocha"
   },
-  "author": "Vivan <vivangkumar>",
+  "author": "Vivan <vivangkumar@gmail.com>",
   "license": "MIT",
+  "bugs": {
+      "url": "https://github.com/vivangkumar/node-data-structures/issues"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
   "dependencies": {
     "chai": "^1.10.0",
     "mocha": "^2.0.1"
