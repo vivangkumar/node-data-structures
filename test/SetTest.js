@@ -5,9 +5,9 @@
  */
 
  var chai = require('chai')
- , expect = chai.expect
- , assert = chai.assert
- , should = chai.should();
+   , expect = chai.expect
+   , assert = chai.assert
+   , should = chai.should();
 
  var Set = require('../index.js').Set;
  var Collection = require('../lib/Collection.js');
