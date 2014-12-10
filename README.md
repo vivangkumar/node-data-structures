@@ -6,6 +6,25 @@ Simple Java-esque implementation of some common data structures in Node.
 
 Based on [adrianko's] (https://github.com/adrianko) implementation of [PHP Data Structures] (https://github.com/adrianko/php-data-structures).
 
+## Installing and using the module
+
+* Install using npm
+
+`npm install node-data-structures`
+
+* Require the module
+
+```javascript
+    var ds = require('node-data-structures');
+
+    // Use the data structures you want
+    var Set = ds.Set
+      , SortedSet = ds.SortedSet
+      , Stack = ds.Stack
+      , Queue = ds.Queue
+      , Iterator = ds.Iterator;
+```
+
 ### Data Structures
 
 * Sets
