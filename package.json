@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Simple implementation of Java like data structures in Javascript.",
   "main": "index.js",
-  "repository": "https://github.com/vivangkumar/node-data-structures",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/vivangkumar/node-data-structures"
+  },
   "keywords": [
      "data structures",
      "iterator",

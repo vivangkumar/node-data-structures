@@ -22,6 +22,7 @@ Based on [adrianko's] (https://github.com/adrianko) implementation of [PHP Data 
 * Sets
 * Sorted Sets
 * Queues
+* Stacks
 * Collections
 * Iterator
 
@@ -78,6 +79,14 @@ Available methods:
 * `remove()`: Retrieves and removes the element at the head of the Queue. Throws an `Error('Queue is empty')` if Queue is empty.
 * `poll()`: Removes and retrieves the element at the head of the Queue. Differs from `remove()` only in that it returns `null` if the Queue is empty.
 * `peek()`: Retrieves the element at the head of the Queue. Differs from `element()` only in that it returns `null` if Queue is empty.
+
+### Stack API
+Available `Stack` methods:
+
+* `push(item)`: Pushes an `item` onto the top of the Stack.
+* `pop()`: Pop the top element off the Stack and return it. Trying to `pop()` on an empty Stack will throw `Error('Stack is empty.')`.
+* `empty()`: This is synonymous to the `isEmpty()` function in the base class. Returns a `boolean` value.
+* `search(item)`: Search for an item in the Stack. Will return an offset from the top of the stack. If `item` does not exist in the Stack, a `Error('No such element')` is thrown.
 
 ## Examples
 
@@ -140,10 +149,22 @@ Available methods:
     q.getAll(); // Contains ["x", "c"]
 ```
 
+* Create a new Stack
+
+```javascript
+    var stack = new Stack();
+    stack.push("z");
+    stack.push(["r", "s"]);
+    console.log(stack.getAll()); // Will return [["r", "s"], "z"]
+
+    stack.pop(); // Will remove ["r", "s"] off the Stack and return it.
+    stack.search("z"); // Will return 1
+```
+
 ## Running Tests
 
 ```javascript
-npm test
+    npm test
 ```
 Test Frameworks:
 * Mocha - Test suite runner.
