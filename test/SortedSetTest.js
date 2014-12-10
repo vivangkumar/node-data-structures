@@ -5,13 +5,14 @@
  */
 
  var chai = require('chai')
- , expect = chai.expect
- , assert = chai.assert
- , should = chai.should();
+   , expect = chai.expect
+   , assert = chai.assert
+   , should = chai.should();
 
- var SortedSet = require('../lib/SortedSet.js');
- var Set = require('../lib/Set.js');
  var Collection = require('../lib/Collection.js');
+ var ds = require('../index.js')
+   , SortedSet = ds.SortedSet
+   , Set = ds.Set;
 
  describe('Sorted Set', function() {
      describe('Add', function() {

@@ -9,7 +9,7 @@
  , assert = chai.assert
  , should = chai.should();
 
- var Set = require('../lib/Set.js');
+ var Set = require('../index.js').Set;
  var Collection = require('../lib/Collection.js');
 
  describe('Set', function() {

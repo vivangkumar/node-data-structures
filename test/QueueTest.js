@@ -5,12 +5,12 @@
  */
 
  var chai = require('chai')
- , expect = chai.expect
- , assert = chai.assert
- , should = chai.should();
+   , expect = chai.expect
+   , assert = chai.assert
+   , should = chai.should();
 
  var Collection = require('../lib/Collection.js');
- var Queue = require('../lib/Queue.js');
+ var Queue = require('../index.js').Queue;
 
  describe('Queue', function() {
      describe('Element', function() {

@@ -10,10 +10,11 @@
    , should = chai.should();
 
  var Collection = require('../lib/Collection.js');
- var Iterator = require('../lib/Iterator.js');
- var Set = require('../lib/Set.js');
- var SortedSet = require('../lib/SortedSet.js');
- var Queue = require('../lib/Queue.js');
+ var ds = require('../index.js')
+   , Iterator = ds.Iterator
+   , Set = ds.Set
+   , SortedSet = ds.SortedSet
+   , Queue = ds.Queue;
 
  describe('Collection Iterator', function() {
      describe('Next', function() {
