@@ -1,6 +1,6 @@
 {
   "name": "node-data-structures",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple implementation of Java like data structures in Javascript.",
   "main": "index.js",
   "repository": {
