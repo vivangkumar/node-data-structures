@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/vivangkumar/node-data-structures.svg?branch=master)](https://travis-ci.org/vivangkumar/node-data-structures)
 [![Dependency Status](https://gemnasium.com/vivangkumar/node-data-structures.svg)](https://gemnasium.com/vivangkumar/node-data-structures)
+
+
 [![NPM](https://nodei.co/npm/node-data-structures.png?downloads=true&stars=true)](https://nodei.co/npm/node-data-structures/)
 
 Simple Java-esque implementation of some common data structures in Node.
